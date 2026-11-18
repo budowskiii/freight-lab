@@ -61,3 +61,32 @@ extrapolate incorrectly, and coordinates are not geographically verified.
 - [December predictions](december_predictions.csv).
 - `train.py` and `src/`: runnable solution.
 - `requirements.txt`: training and scoring dependencies.
+
+## Experiments and explanation
+
+`experiments/` contains the baseline, feature-selection, tuning, comparison and
+SHAP scripts used to develop the solution. Run them from the repository root:
+
+```bash
+PYTHONPATH=. python experiments/compare_final.py
+PYTHONPATH=. python experiments/blend_test.py
+PYTHONPATH=. python experiments/shap_analysis.py
+```
+
+The useful supporting reports are retained:
+
+| Files | What they explain |
+| --- | --- |
+| `cv_results.csv`, `split_diagram.png` | Chronological validation and its results |
+| `feature_selection.json` | Feature-selection steps and selected inputs |
+| `grid_results.json` | Hyperparameters searched and their scores |
+| `compare_final.csv`, `blend_test.csv` | Model comparisons and the reason for blending |
+| `october_holdout.csv` | Earlier October diagnostic comparison |
+| `shap_importance.png`, `shap_dependence.png`, `shap_family_importance.csv` | Feature importance and model effects |
+
+These files live in `reports/`. Historical feature-search scores used the
+original exploratory preprocessing. The refreshed final comparisons and main
+pipeline use fold-specific weight imputation. October was reused in selection.
+SHAP summaries explain component log predictions, rather than an exact additive
+decomposition of the final dollar-space blend. Redundant console logs and PDF
+build tooling are omitted.
