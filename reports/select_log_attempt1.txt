@@ -1,0 +1,34 @@
+BASELINE raw features, LightGBM only: MAE=121.25 MedAPE=2.69% cleanMAE=69.88
+   try S1 linear block on raw cols (distance, equipment, weight, market_index, quote_signal): MAE=119.76
+   try S1 time trend (t): MAE=161.31
+   try S1 log distance: MAE=119.91
+   try S1 inverse distance: MAE=120.28
+   try S2 daily market level (mi_day, qs_day): MAE=112.15
+   try S2 market rolling/changes (roll7, roll14, diff1, diff7): MAE=129.51
+   try S2 deviation from daily (mi_dev, qs_dev): MAE=123.49
+   try S2 geo deltas + bearing (dlat, dlon, bearing): MAE=121.64
+   try S2 weight_missing flag: MAE=122.25
+   try S2 log/inv distance (tree-redundant check): MAE=120.64
+ADD  S2 daily market level (mi_day, qs_day): MAE 121.25 -> 112.15  MedAPE 2.42%  cleanMAE 60.71
+   try S1 linear block on raw cols (distance, equipment, weight, market_index, quote_signal): MAE=111.83
+   try S1 time trend (t): MAE=180.83
+   try S1 log distance: MAE=111.44
+   try S1 inverse distance: MAE=109.37
+   try S2 market rolling/changes (roll7, roll14, diff1, diff7): MAE=118.64
+   try S2 deviation from daily (mi_dev, qs_dev): MAE=114.18
+   try S2 geo deltas + bearing (dlat, dlon, bearing): MAE=113.05
+   try S2 weight_missing flag: MAE=111.75
+   try S2 log/inv distance (tree-redundant check): MAE=112.43
+ADD  S1 inverse distance: MAE 112.15 -> 109.37  MedAPE 2.40%  cleanMAE 57.85
+   try S1 linear block on raw cols (distance, equipment, weight, market_index, quote_signal): MAE=111.92
+   try S1 time trend (t): MAE=172.13
+   try S1 log distance: MAE=111.16
+   try S2 market rolling/changes (roll7, roll14, diff1, diff7): MAE=115.70
+   try S2 deviation from daily (mi_dev, qs_dev): MAE=112.40
+   try S2 geo deltas + bearing (dlat, dlon, bearing): MAE=110.17
+   try S2 weight_missing flag: MAE=111.80
+   try S2 log/inv distance (tree-redundant check): MAE=110.45
+STOP: best remaining (S2 geo deltas + bearing (dlat, dlon, bearing)) only gives MAE 110.17 vs 109.37 (<0.3% gain)
+FORWARD RESULT  S1: ['inv_dist']  S2: ['distance', 'equip', 'weight', 'market_index', 'quote_signal', 'pickup_lat', 'pickup_lon', 'delivery_lat', 'delivery_lon', 'mi_day', 'qs_day']
+PRUNE done: every remaining feature hurts if removed
+FINAL  S1: ['inv_dist']  S2: ['distance', 'equip', 'weight', 'market_index', 'quote_signal', 'pickup_lat', 'pickup_lon', 'delivery_lat', 'delivery_lon', 'mi_day', 'qs_day']  score: (np.float64(109.36945664460508), np.float64(2.4008049710794244), np.float64(57.845555212412286))

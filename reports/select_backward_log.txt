@@ -1,0 +1,89 @@
+hand-picked: MAE=102.14 MedAPE=1.84% cleanMAE=50.56
+   try -time trend t (S1): MAE=114.66
+   try -log distance (S1): MAE=100.98
+   try -inverse distance (S1): MAE=101.47
+   try -S2 distance transforms (log,inv): MAE=101.99
+   try -S2 weight_missing: MAE=102.73
+   try -S2 daily level (mi_day,qs_day): MAE=114.30
+   try -S2 rolling/changes x4: MAE=101.16
+   try -S2 deviations (mi_dev,qs_dev): MAE=101.18
+   try -S2 geo deltas+bearing: MAE=101.67
+   try -S2 raw coordinates x4: MAE=117.76
+   try -S2 quote_signal: MAE=101.03
+   try -S2 market_index: MAE=103.29
+   try -S2 weight: MAE=102.30
+DROP log distance (S1): MAE 102.14 -> 100.98
+   try -time trend t (S1): MAE=113.20
+   try -inverse distance (S1): MAE=98.54
+   try -S2 distance transforms (log,inv): MAE=101.09
+   try -S2 weight_missing: MAE=101.14
+   try -S2 daily level (mi_day,qs_day): MAE=111.17
+   try -S2 rolling/changes x4: MAE=100.42
+   try -S2 deviations (mi_dev,qs_dev): MAE=99.42
+   try -S2 geo deltas+bearing: MAE=100.69
+   try -S2 raw coordinates x4: MAE=117.56
+   try -S2 quote_signal: MAE=99.37
+   try -S2 market_index: MAE=100.81
+   try -S2 weight: MAE=100.44
+DROP inverse distance (S1): MAE 100.98 -> 98.54
+   try -time trend t (S1): MAE=113.15
+   try -S2 distance transforms (log,inv): MAE=100.55
+   try -S2 weight_missing: MAE=98.20
+   try -S2 daily level (mi_day,qs_day): MAE=102.94
+   try -S2 rolling/changes x4: MAE=98.14
+   try -S2 deviations (mi_dev,qs_dev): MAE=97.91
+   try -S2 geo deltas+bearing: MAE=98.61
+   try -S2 raw coordinates x4: MAE=112.29
+   try -S2 quote_signal: MAE=98.52
+   try -S2 market_index: MAE=98.20
+   try -S2 weight: MAE=97.15
+DROP S2 weight: MAE 98.54 -> 97.15
+   try -time trend t (S1): MAE=113.25
+   try -S2 distance transforms (log,inv): MAE=99.39
+   try -S2 weight_missing: MAE=97.88
+   try -S2 daily level (mi_day,qs_day): MAE=101.58
+   try -S2 rolling/changes x4: MAE=96.89
+   try -S2 deviations (mi_dev,qs_dev): MAE=98.07
+   try -S2 geo deltas+bearing: MAE=97.34
+   try -S2 raw coordinates x4: MAE=109.22
+   try -S2 quote_signal: MAE=97.89
+   try -S2 market_index: MAE=97.43
+DROP S2 rolling/changes x4: MAE 97.15 -> 96.89
+   try -time trend t (S1): MAE=112.31
+   try -S2 distance transforms (log,inv): MAE=97.64
+   try -S2 weight_missing: MAE=97.14
+   try -S2 daily level (mi_day,qs_day): MAE=97.29
+   try -S2 deviations (mi_dev,qs_dev): MAE=98.89
+   try -S2 geo deltas+bearing: MAE=96.96
+   try -S2 raw coordinates x4: MAE=107.29
+   try -S2 quote_signal: MAE=98.58
+   try -S2 market_index: MAE=97.43
+DROP S2 geo deltas+bearing: MAE 96.89 -> 96.96
+   try -time trend t (S1): MAE=112.84
+   try -S2 distance transforms (log,inv): MAE=98.20
+   try -S2 weight_missing: MAE=97.04
+   try -S2 daily level (mi_day,qs_day): MAE=97.55
+   try -S2 deviations (mi_dev,qs_dev): MAE=99.25
+   try -S2 raw coordinates x4: MAE=111.02
+   try -S2 quote_signal: MAE=97.71
+   try -S2 market_index: MAE=97.57
+DROP S2 weight_missing: MAE 96.96 -> 97.04
+   try -time trend t (S1): MAE=112.23
+   try -S2 distance transforms (log,inv): MAE=99.86
+   try -S2 daily level (mi_day,qs_day): MAE=96.93
+   try -S2 deviations (mi_dev,qs_dev): MAE=98.62
+   try -S2 raw coordinates x4: MAE=110.74
+   try -S2 quote_signal: MAE=98.27
+   try -S2 market_index: MAE=97.09
+DROP S2 daily level (mi_day,qs_day): MAE 97.04 -> 96.93
+   try -time trend t (S1): MAE=119.58
+   try -S2 distance transforms (log,inv): MAE=99.18
+   try -S2 deviations (mi_dev,qs_dev): MAE=99.80
+   try -S2 raw coordinates x4: MAE=109.58
+   try -S2 quote_signal: MAE=103.06
+   try -S2 market_index: MAE=97.69
+STOP: cheapest remaining drop (S2 market_index) would cost MAE 97.69 vs 96.93
+BACKWARD RESULT: ['equipment', 'weight', 'market_index', 'quote_signal', 't'] ['distance', 'log_dist', 'inv_dist', 'equip', 'market_index', 'quote_signal', 'mi_dev', 'qs_dev', 'pickup_lat', 'pickup_lon', 'delivery_lat', 'delivery_lon'] MAE=96.93 MedAPE=1.62% cleanMAE=45.20
+FORWARD set re-scored: MAE=98.85 MedAPE=1.74% cleanMAE=47.21
+WINNER on Jul-Sep folds: backward MAE=96.93 MedAPE=1.62% cleanMAE=45.20
+DONE

@@ -1,0 +1,22 @@
+{
+  "verified_python": "3.13",
+  "cv_all_mae_monthly_mean": 95.45577857127864,
+  "checks": [
+    "isolated environment installation and pip check",
+    "two unit tests",
+    "full training",
+    "provided scorer:12000 validation rows and31December rows",
+    "report rebuild",
+    "four input files unchanged",
+    "fold-imputation and no-mutation regression tests"
+  ],
+  "files": {
+    "train.py": "41425e98026690f048fc8e42ae75b88705572d168c4d20136e9abf2c1822b50a",
+    "requirements.txt": "4dfaf6f89fbf9c6e85a4708fdbff3249f20feb17e185bc87d53ffdd4d1f6decf",
+    "validation_predictions.csv": "cfece509d986c6f4a1aaed00a56de8fb92ca30c81b901e5dee6d69025917b04f",
+    "december_predictions.csv": "7440a0da5fec7fa6841b1d46dbb358ea7c0b4be6be1b3cce1bbbe5656a5a31f1",
+    "Freight_Rate_Report.pdf": "3310f35163d600c93d083fd4aa6b1c7d368592d1e111a59c8fcae202917f8e06",
+    "scorer_results/candidate_december.png": "b48670b6c515b696a32d237950963b7ad6c155274fd8aaa3e89f80095de08ea0"
+  },
+  "verified_entrypoint": "python train.py"
+}

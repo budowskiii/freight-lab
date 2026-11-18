@@ -1,0 +1,38 @@
+REFERENCE  earlier hand-picked (all 23 tree features + full linear stage w/ trend): MAE=102.14  MedAPE=1.84%  cleanMAE=50.56
+B0  raw features, LightGBM only: MAE=121.25  MedAPE=2.69%  cleanMAE=69.88
+B1  raw features, linear stage + LightGBM (START): MAE=119.76  MedAPE=2.76%  cleanMAE=68.32
+   try +time trend t (S1): MAE=104.05
+   try +log distance (S1): MAE=119.62
+   try +inverse distance (S1): MAE=119.52
+   try +daily market level mi_day, qs_day (S2): MAE=111.83
+   try +market rolling/changes x4 (S2): MAE=124.66
+   try +deviation from daily mi_dev, qs_dev (S2): MAE=119.64
+   try +geo deltas + bearing (S2): MAE=119.59
+   try +weight_missing flag (S2): MAE=119.70
+   try +log/inv distance (S2, tree-redundant): MAE=119.37
+ADD  time trend t (S1): MAE 119.76 -> 104.05  (MAE=104.05  MedAPE=1.83%  cleanMAE=52.48)
+   try +log distance (S1): MAE=105.58
+   try +inverse distance (S1): MAE=105.58
+   try +daily market level mi_day, qs_day (S2): MAE=99.30
+   try +market rolling/changes x4 (S2): MAE=116.88
+   try +deviation from daily mi_dev, qs_dev (S2): MAE=99.40
+   try +geo deltas + bearing (S2): MAE=103.78
+   try +weight_missing flag (S2): MAE=104.13
+   try +log/inv distance (S2, tree-redundant): MAE=103.94
+ADD  daily market level mi_day, qs_day (S2): MAE 104.05 -> 99.30  (MAE=99.30  MedAPE=1.75%  cleanMAE=47.69)
+   try +log distance (S1): MAE=100.75
+   try +inverse distance (S1): MAE=100.40
+   try +market rolling/changes x4 (S2): MAE=101.69
+   try +deviation from daily mi_dev, qs_dev (S2): MAE=99.96
+   try +geo deltas + bearing (S2): MAE=99.06
+   try +weight_missing flag (S2): MAE=99.29
+   try +log/inv distance (S2, tree-redundant): MAE=98.85
+ADD  log/inv distance (S2, tree-redundant): MAE 99.30 -> 98.85  (MAE=98.85  MedAPE=1.74%  cleanMAE=47.21)
+   try +log distance (S1): MAE=100.75
+   try +inverse distance (S1): MAE=100.33
+   try +market rolling/changes x4 (S2): MAE=100.48
+   try +deviation from daily mi_dev, qs_dev (S2): MAE=99.58
+   try +geo deltas + bearing (S2): MAE=99.03
+   try +weight_missing flag (S2): MAE=99.17
+STOP forward: best leftover (geo deltas + bearing (S2)) MAE 99.03 vs 98.85, under 0.3% gain
+FORWARD RESULT: ['distance', 'equipment', 'weight', 'market_index', 'quote_signal', 't'] ['distance', 'equip', 'weight', 'market_index', 'quote_signal', 'pickup_lat', 'pickup_lon', 'delivery_lat', 'delivery_lon', 'mi_day', 'qs_day', 'log_dist', 'inv_dist'] MAE=98.85  MedAPE=1.74%  cleanMAE=47.21
