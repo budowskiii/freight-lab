@@ -1,4 +1,4 @@
-"""Final configuration. Chosen with time-split CV (see reports/ and experiments/)."""
+"""Final blend configuration selected using time-split validation."""
 from src.model import S1_DEFAULT
 
 # Model A: full feature set (my first design)
