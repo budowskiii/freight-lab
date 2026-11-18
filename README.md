@@ -13,7 +13,6 @@ From this repository's root, with Python 3.13:
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
-python -m unittest discover -s tests -v
 
 # Copy the supplied assessment datasets into these paths first:
 # data/train_test.csv and data/validation.csv

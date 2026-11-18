@@ -3,12 +3,10 @@
   "cv_all_mae_monthly_mean": 95.45577857127864,
   "checks": [
     "isolated environment installation and pip check",
-    "two unit tests",
     "full training",
     "provided scorer:12000 validation rows and31December rows",
     "report rebuild",
-    "four input files unchanged",
-    "fold-imputation and no-mutation regression tests"
+    "four input files unchanged"
   ],
   "files": {
     "train.py": "41425e98026690f048fc8e42ae75b88705572d168c4d20136e9abf2c1822b50a",
